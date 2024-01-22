@@ -23,15 +23,15 @@ class TodoService implements TodoInterfaceService
      */
     public function __construct(
         TodoRepository $todoRepository
-    )
-    {
+    ) {
         $this->todoRepository = $todoRepository;
     }
 
     /**
      * @param TodoCreateRequest $request
      * @return Todo
-     */public function create(TodoCreateRequest $request): Todo
+     */
+    public function create(TodoCreateRequest $request): Todo
     {
         $eloquentTodo = $this->todoRepository->create($request);
 

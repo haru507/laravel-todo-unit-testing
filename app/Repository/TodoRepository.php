@@ -16,7 +16,7 @@ class TodoRepository implements TodoInterfaceRepository
     {
         $eloquentTodo = new EloquentTodo();
         $eloquentTodo->title = $todo->title;
-        $eloquentTodo->isCompleted = $todo->isCompleted;
+        $eloquentTodo->isCompleted = $todo->isCompleted ?? false;
         $eloquentTodo->save();
 
         return $eloquentTodo;

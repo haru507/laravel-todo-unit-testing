@@ -5,7 +5,7 @@ namespace App\Models;
 /**
  * Todoモデル
  */
-readonly class Todo
+readonly class Todo implements ResponseInterface
 {
     /**
      * @param int $id
@@ -40,5 +40,14 @@ readonly class Todo
     public function getTitle(): string
     {
         return $this->title;
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->getId(),
+            'title' => $this->getTitle(),
+            'isCompleted' => $this->getIsCompleted(),
+        ];
     }
 }

@@ -36,10 +36,6 @@ class TodoController extends Controller
     public function create(TodoCreateRequest $request): JsonResponse
     {
         $todo = $this->todoService->create($request);
-        return response()->json([
-            'id' => $todo->getId(),
-            'title' => $todo->getTitle(),
-            'isCompleted' => $todo->getIsCompleted()
-        ]);
+        return response()->json($todo->toArray());
     }
 }

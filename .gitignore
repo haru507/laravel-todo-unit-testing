@@ -23,3 +23,4 @@ docker/mysql/*
 docker/nginx/logs/*
 .phpstorm.meta.php
 _ide_helper_models.php
+.pint.cache
